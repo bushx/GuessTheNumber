@@ -12,11 +12,11 @@ public class app {
         Scanner scanner = new Scanner(System.in);
 
         while (guessAnswer != rightAnswer) {
-            if (guessAnswer > rightAnswer&&guessAnswer <= endRange) {
+            if (guessAnswer > rightAnswer && guessAnswer <= endRange) {
                 System.out.println("Its a Lower number try again");
                 guessAnswer = scanner.nextInt();
                 guesses++;
-            } else if (guessAnswer < rightAnswer&&guessAnswer >= startRange) {
+            } else if (guessAnswer < rightAnswer && guessAnswer >= startRange) {
                 System.out.println("Its a Higher number try again");
                 guessAnswer = scanner.nextInt();
                 guesses++;
