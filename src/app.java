@@ -2,24 +2,15 @@ import java.util.Scanner;
 
 
 public class app {
-    public static void main(String[] args) {
+    
+    static int randomNumber(int startRange, int endRange) {
+        return (int) ((Math.random() * (endRange - startRange)) + startRange);
+    }
 
-        System.out.println("Please enter a range of numbers");
+    static void checkNumber(int guessAnswer, int rightAnswer, int startRange, int endRange){
+        int guesses=1;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Start");
-        int startRange = scanner.nextInt();
-
-        System.out.println("End");
-        int endRange = scanner.nextInt();
-
-
-        int rightAnswer = (int) ((Math.random() * (endRange - startRange)) + startRange);
-
-
-        System.out.println("Now choose a number between " + startRange + " and " + endRange);
-        int guessAnswer = scanner.nextInt();
-        int guesses=1;
         while (guessAnswer != rightAnswer) {
             if (guessAnswer > rightAnswer&&guessAnswer <= endRange) {
                 System.out.println("Its a Lower number try again");
@@ -37,7 +28,26 @@ public class app {
                 guesses++;
             }
         }
+
         System.out.println("YOU GOT IT! The correct Number was: "+rightAnswer);
         System.out.println("It took you "+guesses+" guesses!");
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("Please enter a range of numbers");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Start");
+        int startRange = scanner.nextInt();
+
+        System.out.println("End");
+        int endRange = scanner.nextInt();
+
+        System.out.println("Now choose a number between " + startRange + " and " + endRange);
+        int guessAnswer = scanner.nextInt();
+
+        checkNumber( guessAnswer, randomNumber( startRange, endRange),startRange,endRange);
+
     }
 }
