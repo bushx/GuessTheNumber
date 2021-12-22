@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class main {
+public class app {
     public static void main(String[] args) {
 
         System.out.println("Please enter a range of numbers");
@@ -29,9 +29,9 @@ public class main {
                 System.out.println("Its a Higher number try again");
                 guessAnswer = scanner.nextInt();
                 guesses++;
-            } else if (guessAnswer >endRange||guessAnswer<startRange){
+            } else {
                 System.out.println("Please keep it in the range of " + startRange + " and " + endRange);
-                System.out.println("ANDDDDDD this counted as one of your guesses!");
+                System.out.println("And this counted as one of your guesses!");
                 System.out.println("Now Guess Again");
                 guessAnswer = scanner.nextInt();
                 guesses++;
